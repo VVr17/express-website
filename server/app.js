@@ -1,15 +1,20 @@
 const express = require('express');
 const compression = require('compression')
 const helmet = require('helmet');
+
+// dependencies to create session and store it in Mongo
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
+
 const path = require('path');
 const createError = require('http-errors');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
-const auth = require('./lib/auth');
+const auth = require('./lib/auth'); // Passport dependencies
+
+// Services
 const SpeakerService = require('./services/SpeakerService');
 const FeedbackService = require('./services/FeedbackService');
 const AvatarService = require('./services/AvatarService');
@@ -53,9 +58,9 @@ module.exports = (config) => {
     }));
   }
 
-  app.use(auth.initialize);
-  app.use(auth.session);
-  app.use(auth.setUser);
+  app.use(auth.initialize);  // passport.initialize()
+  app.use(auth.session); //  passport.session()
+  app.use(auth.setUser); // set user to req.user
 
   app.use(async (req, res, next) => {
     try {

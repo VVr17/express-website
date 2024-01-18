@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const bunyan = require('bunyan');
+const bunyan = require('bunyan'); // logger
 const path = require('path');
 
 const loggers = {
