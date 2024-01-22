@@ -1,6 +1,6 @@
 const express = require('express');
-const compression = require('compression')
-const helmet = require('helmet');
+const compression = require('compression') // compress app to send it to browser
+const helmet = require('helmet'); // secure Express apps by setting HTTP response headers
 
 // dependencies to create session and store it in Mongo
 const cookieParser = require('cookie-parser');

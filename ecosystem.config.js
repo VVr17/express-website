@@ -13,7 +13,7 @@ module.exports = {
         "user" : "ubuntu",
         "host" : "18.207.1.22",
         "ref"  : "origin/master",
-        "repo" : "https://github.com/webdevjourneyWDJ/Advanced_Express_Website.git",
+        "repo" : "https://github.com/VVr17/express-website.git",
         "path" : "/home/ubuntu/deploy",
         "pre-setup" : "pwd",
         "pre-deploy-local" : "echo 'This is a local executed command'",
